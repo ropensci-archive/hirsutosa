@@ -1,0 +1,21 @@
+Package: hirsutosa
+Title: Pilosa Index Store Client
+Description: Pilosa (<https://www.pilosa.com>) Index Store Client.
+Version: 0.0.1.9100
+License: MIT + file LICENSE
+Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus@gmail.com")
+URL: https://github.com/ropenscilabs/hirsutosa
+BugReports: https://github.com/ropenscilabs/hirsutosa/issues
+Roxygen: list(markdown = TRUE)
+Imports:
+    utils,
+    curl,
+    crul (>= 0.5.2),
+    jsonlite (>= 1.5)
+Suggests:
+    testthat
+RoxygenNote: 6.0.1
+X-schema.org-applicationCategory: Databases
+X-schema.org-keywords: database, pilosa, HTTP, API, search, NoSQL, index, Golang
+X-schema.org-isPartOf: https://ropensci.org
