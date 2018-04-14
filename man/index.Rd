@@ -2,16 +2,16 @@
 % Please edit documentation in R/index.R
 \name{index}
 \alias{index}
-\alias{index_get}
-\alias{index_create}
-\alias{index_delete}
-\title{Index API operations}
+\alias{hirs_index_get}
+\alias{hirs_index_create}
+\alias{hirs_index_delete}
+\title{Index operations}
 \usage{
-index_get(index = NULL, raw = FALSE, ...)
+hirs_index_get(index = NULL, raw = FALSE, ...)
 
-index_create(index, raw = FALSE, ...)
+hirs_index_create(index, raw = FALSE, ...)
 
-index_delete(index, raw = FALSE, ...)
+hirs_index_delete(index, raw = FALSE, ...)
 }
 \arguments{
 \item{index}{(character) A character vector of index names}
@@ -22,18 +22,15 @@ then raw JSON.}
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
-Index API operations
+Index operations
 }
 \examples{
 \dontrun{
-index_get()
-index_create("foobar")
-index_delete("foobar")
+hirs_index_get()
+hirs_index_create("foobar")
+hirs_index_delete("foobar")
 }
 }
 \references{
 <>
-}
-\author{
-Scott Chamberlain \href{mailto:myrmecocystus@gmail.com}{myrmecocystus@gmail.com}
 }

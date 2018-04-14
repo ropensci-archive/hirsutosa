@@ -32,22 +32,64 @@ library('hirsutosa')
 
 See <https://www.pilosa.com/docs/latest/installation/>
 
-## Start Pilosa
+## Getting started 
 
-* Navigate to hirsutosasearch: `cd /usr/local/hirsutosasearch`
-* Start hirsutosasearch: `bin/hirsutosasearch`
+### Start Pilosa
 
-## Load data
+`pilosa server`
 
-xxx
+or similar if running on Docker, etc.
 
-## Initialization
+### Create an index
 
-xx
+```{r eval=FALSE}
+hirs_index_create("repository")
+```
 
-## ping
+### Creat a frame 
 
-xx
+```{r eval=FALSE}
+hirs_frame_create("repository", "stargazer", 
+    time_quantum = "YMD", inverse_enabled = TRUE)
+```
+
+And another
+
+```{r eval=FALSE}
+hirs_frame_create("repository", "language")
+```
+
+### Import data
+
+This part has to be done on the command line, sorry.
+
+Download data
+
+```
+curl -O https://raw.githubusercontent.com/pilosa/getting-started/master/stargazer.csv
+curl -O https://raw.githubusercontent.com/pilosa/getting-started/master/language.csv
+```
+
+Import data into Pilosa
+
+```
+pilosa import -i repository -f stargazer stargazer.csv
+pilosa import -i repository -f language language.csv
+```
+
+### Example queries
+
+Which repositories did user 14 star:
+
+```{r}
+hirs_search("repository", 'Bitmap(frame="stargazer", rowID=14)')
+``` 
+
+What are the top 5 languages in the sample data:
+
+```{r}
+hirs_search("repository", 'TopN(frame="language", n=5)')
+``` 
 
 ## Meta
 
@@ -57,4 +99,4 @@ xx
 * Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

@@ -10,16 +10,16 @@
 #' @param ... Curl args passed on to [crul::HttpClient]
 #' @references <https://www.pilosa.com/docs/latest/api-reference/>
 #' @examples \dontrun{
-#' index_search("repository", 'Bitmap(frame="language", rowID=5)')
-#' index_search("repository", 'Bitmap(frame="language", rowID=5)', 
+#' hirs_search("repository", 'Bitmap(frame="language", rowID=5)')
+#' hirs_search("repository", 'Bitmap(frame="language", rowID=5)', 
 #'    columnAttrs = TRUE, slices = "0,1", verbose = TRUE)
-#' index_search("repository", 'Count(Bitmap(frame="stargazer", rowID=10))')
+#' hirs_search("repository", 'Count(Bitmap(frame="stargazer", rowID=10))')
 #' 
 #' # error
-#' index_search("repository", 
+#' hirs_search("repository", 
 #'   'Union(Bitmap(frame="stargazer", stargazer_id=1), Bitmap(frame="stargazer", stargazer_id=2))')
 #' }
-index_search <- function(index, body, column_attrs = NULL, slices = NULL, 
+hirs_search <- function(index, body, column_attrs = NULL, slices = NULL, 
   raw = FALSE, ...) {
 
   args <- comp(list(columnAttrs = column_attrs, slices = slices))
