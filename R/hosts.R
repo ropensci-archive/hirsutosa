@@ -5,4 +5,4 @@
 #' @examples \dontrun{
 #' hirs_hosts()
 #' }
-hirs_hosts <- function(raw = FALSE, ...) hir_GET("hosts", ...)
+hirs_hosts <- function(...) hir_GET("hosts", ...)

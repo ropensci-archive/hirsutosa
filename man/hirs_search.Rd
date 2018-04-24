@@ -28,12 +28,12 @@ Search
 \dontrun{
 hirs_search("repository", 'Bitmap(frame="language", rowID=5)')
 hirs_search("repository", 'Bitmap(frame="language", rowID=5)', 
-   columnAttrs = TRUE, slices = "0,1", verbose = TRUE)
+   columnAttrs = TRUE, slices = "0,1")
 hirs_search("repository", 'Count(Bitmap(frame="stargazer", rowID=10))')
 
 # error
-hirs_search("repository", 
-  'Union(Bitmap(frame="stargazer", stargazer_id=1), Bitmap(frame="stargazer", stargazer_id=2))')
+# hirs_search("repository", 
+#  'Union(Bitmap(frame="stargazer", stargazer_id=1), Bitmap(frame="stargazer", stargazer_id=2))')
 }
 }
 \references{

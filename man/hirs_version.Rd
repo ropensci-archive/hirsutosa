@@ -4,12 +4,9 @@
 \alias{hirs_version}
 \title{Get Pilosa version}
 \usage{
-hirs_version(raw = FALSE, ...)
+hirs_version(...)
 }
 \arguments{
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
-
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{

@@ -5,6 +5,6 @@
 #' @examples \dontrun{
 #' hirs_schema()
 #' }
-hirs_schema <- function(raw = FALSE, ...) {
+hirs_schema <- function(...) {
   hir_GET("schema", ...)
 }

@@ -57,6 +57,7 @@ And another
 hirs_frame_create("repository", "language")
 ```
 
+
 ### Import data
 
 This part has to be done on the command line, sorry.
@@ -73,6 +74,21 @@ Import data into Pilosa
 ```
 pilosa import -i repository -f stargazer stargazer.csv
 pilosa import -i repository -f language language.csv
+```
+
+
+### Get indices
+
+
+```r
+hirs_index_get()
+#> <pilosa indexes>
+#>  index: repository
+#>   frames:
+#>     language
+#>       views (n): 1
+#>     stargazer
+#>       views (n): 3663
 ```
 
 ### Example queries
@@ -110,4 +126,4 @@ hirs_search("repository", 'TopN(frame="language", n=5)')
 * Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

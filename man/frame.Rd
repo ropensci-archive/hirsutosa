@@ -9,11 +9,11 @@
 \usage{
 hirs_frame_create(index, frame, time_quantum = NULL, inverse_enabled = NULL,
   cache_type = "lru", cache_size = 50000L, range_enabled = NULL,
-  fields = NULL, raw = FALSE, ...)
+  fields = NULL, ...)
 
-hirs_frame_delete(index, frame, raw = FALSE, ...)
+hirs_frame_delete(index, frame, ...)
 
-hirs_frame_updatetq(index, frame, time_quantum, raw = FALSE, ...)
+hirs_frame_updatetq(index, frame, time_quantum, ...)
 }
 \arguments{
 \item{index}{(character) A character vector of index names}
@@ -35,9 +35,6 @@ Default: 50,000}
 this frame}
 
 \item{fields}{(character) character vector of range-encoded fields}
-
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
 
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }

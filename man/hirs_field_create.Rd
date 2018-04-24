@@ -4,8 +4,7 @@
 \alias{hirs_field_create}
 \title{Fields}
 \usage{
-hirs_field_create(index, frame, field, type = "int", min, max, raw = FALSE,
-  ...)
+hirs_field_create(index, frame, field, type = "int", min, max, ...)
 }
 \arguments{
 \item{index}{(character) A character vector of index names}
@@ -19,9 +18,6 @@ hirs_field_create(index, frame, field, type = "int", min, max, raw = FALSE,
 \item{min}{(integer) minimum value. required}
 
 \item{max}{(integer) maximum value. required}
-
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
 
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }

@@ -20,7 +20,7 @@
 #'   field = "prs", type="int", min=0, max=100000L)
 #' }
 hirs_field_create <- function(index, frame, field, type = "int", 
-  min, max, raw = FALSE, ...) {
+  min, max, ...) {
 
   args <- comp(list(type = type, min = min, max = max))
   path <- file.path("index", index, "frame", frame, "field", field)

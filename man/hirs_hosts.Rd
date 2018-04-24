@@ -4,12 +4,9 @@
 \alias{hirs_hosts}
 \title{List hosts}
 \usage{
-hirs_hosts(raw = FALSE, ...)
+hirs_hosts(...)
 }
 \arguments{
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
-
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{

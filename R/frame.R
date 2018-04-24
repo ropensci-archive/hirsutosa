@@ -31,27 +31,27 @@
 #' @rdname frame
 hirs_frame_create <- function(index, frame, time_quantum = NULL, 
   inverse_enabled = NULL, cache_type = "lru", cache_size = 50000L, 
-  range_enabled = NULL, fields = NULL, raw = FALSE, ...) {
+  range_enabled = NULL, fields = NULL, ...) {
 
-  args <- comp(list(timeQuantam = time_quantum, 
+  args <- list(options = comp(list(timeQuantum = time_quantum, 
     inverseEnabled = inverse_enabled, cacheType = cache_type, 
     cacheSize = cache_size, rangeEnabled = range_enabled, 
-    fields = fields))
+    fields = fields)))
   hir_POST(file.path("index", index, "frame", frame), 
     body = args, ...)
 }
 
 #' @export
 #' @rdname frame
-hirs_frame_delete <- function(index, frame, raw = FALSE, ...) {
+hirs_frame_delete <- function(index, frame, ...) {
   hir_DELETE(file.path("index", index, "frame", frame), ...)
 }
 
 #' @export
 #' @rdname frame
-hirs_frame_updatetq <- function(index, frame, time_quantum, raw = FALSE, ...) {
+hirs_frame_updatetq <- function(index, frame, time_quantum, ...) {
   stopifnot(is.character(time_quantum))
-  body <- list(timeQuantam = time_quantum)
+  body <- list(timeQuantum = time_quantum)
   hir_POST(file.path("index", index, "frame", frame, "time-quantum"), 
     body = body, ...)
 }

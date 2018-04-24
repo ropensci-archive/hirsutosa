@@ -1,7 +1,7 @@
 Package: hirsutosa
 Title: Pilosa Index Store Client
 Description: Pilosa (<https://www.pilosa.com>) Index Store Client.
-Version: 0.0.1.9100
+Version: 0.0.1.9310
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")

@@ -15,30 +15,31 @@ catch_err <- function(x) {
 }
 
 # verbs
-hir_GET <- function(path, query = list(), ...) {
+hir_GET <- function(path, query = list(), parse = TRUE, ...) {
   cli <- crul::HttpClient$new(pilosa_url, opts = list(...))
   tt <- cli$get(path, query = query)
   catch_err(tt)
-  jsonlite::fromJSON(tt$parse("UTF-8"))
+  jsonlite::fromJSON(tt$parse("UTF-8"), parse)
 }
 
-hir_POST <- function(path, query = list(), body = list(), ...) {
+hir_POST <- function(path, query = list(), body = c(), parse = TRUE, ...) {
   cli <- crul::HttpClient$new(pilosa_url, opts = list(...))
+  if (length(body) == 0 || nchar(body) == 0) body <- ""
   tt <- cli$post(path, query = query, body = body, encode = "json")
   catch_err(tt)
-  jsonlite::fromJSON(tt$parse("UTF-8"))
+  jsonlite::fromJSON(tt$parse("UTF-8"), parse)
 }
 
-hir_PATCH <- function(path, query = list(), body = list(), ...) {
+hir_PATCH <- function(path, query = list(), body = c(), parse = TRUE, ...) {
   cli <- crul::HttpClient$new(pilosa_url, opts = list(...))
   tt <- cli$patch(path, query = query, body = body, encode = "json")
   catch_err(tt)
-  jsonlite::fromJSON(tt$parse("UTF-8"))
+  jsonlite::fromJSON(tt$parse("UTF-8"), parse)
 }
 
-hir_DELETE <- function(path, ...) {  
+hir_DELETE <- function(path, parse = TRUE, ...) {  
   cli <- crul::HttpClient$new(pilosa_url, opts = list(...))
   tt <- cli$delete(path)
   catch_err(tt)
-  jsonlite::fromJSON(tt$parse("UTF-8"))
+  jsonlite::fromJSON(tt$parse("UTF-8"), parse)
 }

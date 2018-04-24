@@ -5,4 +5,4 @@
 #' @examples \dontrun{
 #' hirs_version()
 #' }
-hirs_version <- function(raw = FALSE, ...) hir_GET("version", ...)
+hirs_version <- function(...) hir_GET("version", ...)

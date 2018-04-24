@@ -4,12 +4,9 @@
 \alias{hirs_schema}
 \title{Get schema}
 \usage{
-hirs_schema(raw = FALSE, ...)
+hirs_schema(...)
 }
 \arguments{
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
-
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{

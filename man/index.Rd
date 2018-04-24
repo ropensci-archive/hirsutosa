@@ -7,17 +7,14 @@
 \alias{hirs_index_delete}
 \title{Index operations}
 \usage{
-hirs_index_get(index = NULL, raw = FALSE, ...)
+hirs_index_get(index = NULL, ...)
 
-hirs_index_create(index, raw = FALSE, ...)
+hirs_index_create(index, ...)
 
-hirs_index_delete(index, raw = FALSE, ...)
+hirs_index_delete(index, ...)
 }
 \arguments{
 \item{index}{(character) A character vector of index names}
-
-\item{raw}{If \code{TRUE} (default), data is parsed to list. If \code{FALSE},
-then raw JSON.}
 
 \item{...}{Curl args passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
@@ -32,5 +29,5 @@ hirs_index_delete("foobar")
 }
 }
 \references{
-<>
+\url{https://www.pilosa.com/docs/latest/api-reference/}
 }
