@@ -4,7 +4,7 @@ Description: Pilosa (<https://www.pilosa.com>) Index Store Client.
 Version: 0.0.1.9310
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com")
+    email = "sckott@protonmail.com")
 URL: https://github.com/ropenscilabs/hirsutosa
 BugReports: https://github.com/ropenscilabs/hirsutosa/issues
 Roxygen: list(markdown = TRUE)
